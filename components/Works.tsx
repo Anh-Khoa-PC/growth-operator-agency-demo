@@ -6,11 +6,11 @@ import { Check, Headset, Globe, Phone, DollarSign } from 'lucide-react';
 
 const Works: React.FC = () => {
   return (
-    <SectionWrapper id="features" className="bg-black relative py-12 md:py-24">
+    <SectionWrapper id="features" className="bg-black relative py-12 md:py-20">
        {/* Background ambient glow */}
-       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[1000px] h-[1000px] bg-brand-orange/5 blur-[120px] rounded-full pointer-events-none opacity-50" />
+       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-brand-orange/5 blur-[100px] rounded-full pointer-events-none opacity-50" />
 
-      <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 max-w-[1400px] mx-auto px-4">
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 max-w-[1200px] mx-auto px-4">
         
         {/* Card 1: Effortless Management */}
         <motion.div
@@ -18,28 +18,28 @@ const Works: React.FC = () => {
             whileInView={{ opacity: 1, scale: 1, y: 0 }}
             viewport={{ once: true, margin: "-50px" }}
             transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
-            className="group relative overflow-hidden rounded-[2.5rem] bg-[#080808] border border-white/10 hover:border-brand-orange/20 transition-all duration-500 h-[650px] flex flex-col items-center justify-between p-12 text-center"
+            className="group relative overflow-hidden rounded-[2rem] bg-[#080808] border border-white/10 hover:border-brand-orange/20 transition-all duration-500 h-[500px] flex flex-col items-center justify-between p-8 text-center"
         >
              {/* Visual: Auto-Pilot Interface + Keyboard */}
-             <div className="w-full flex-1 flex flex-col items-center justify-center gap-8 relative">
+             <div className="w-full flex-1 flex flex-col items-center justify-center gap-6 relative scale-90">
                  
                  {/* Interface Window */}
-                 <div className="w-full max-w-[320px] bg-[#0c0c0c] rounded-2xl border border-white/10 p-5 shadow-2xl relative z-10">
-                    <div className="flex items-center justify-between mb-6">
-                        <div className="flex gap-2">
-                             <div className="w-2 h-2 rounded-full bg-[#333]" />
-                             <div className="w-2 h-2 rounded-full bg-[#333]" />
-                             <div className="w-2 h-2 rounded-full bg-[#333]" />
+                 <div className="w-full max-w-[280px] bg-[#0c0c0c] rounded-2xl border border-white/10 p-4 shadow-2xl relative z-10">
+                    <div className="flex items-center justify-between mb-4">
+                        <div className="flex gap-1.5">
+                             <div className="w-1.5 h-1.5 rounded-full bg-[#333]" />
+                             <div className="w-1.5 h-1.5 rounded-full bg-[#333]" />
+                             <div className="w-1.5 h-1.5 rounded-full bg-[#333]" />
                         </div>
-                        <div className="px-3 py-1 bg-brand-orange/10 rounded-full border border-brand-orange/20">
-                            <span className="text-[10px] font-bold text-brand-orange uppercase tracking-wider flex items-center gap-1.5">
-                                <span className="w-1.5 h-1.5 rounded-full bg-brand-orange animate-pulse" />
+                        <div className="px-2 py-0.5 bg-brand-orange/10 rounded-full border border-brand-orange/20">
+                            <span className="text-[9px] font-bold text-brand-orange uppercase tracking-wider flex items-center gap-1">
+                                <span className="w-1 h-1 rounded-full bg-brand-orange animate-pulse" />
                                 Auto-Pilot
                             </span>
                         </div>
                     </div>
 
-                    <div className="space-y-3 font-mono text-xs">
+                    <div className="space-y-2 font-mono text-[10px]">
                         <AnimatedStatusRow label="Ads Campaign" targetStatus="Optimized" color="text-[#4ADE80]" delay={0.5} />
                         <AnimatedStatusRow label="Landing Page" targetStatus="Published" color="text-[#FB923C]" delay={2.0} />
                         <AnimatedStatusRow label="CRM System" targetStatus="Connected" color="text-[#60A5FA]" delay={3.5} />
@@ -47,25 +47,25 @@ const Works: React.FC = () => {
                  </div>
 
                  {/* Dark Keyboard Representation with Typing Animation */}
-                 <div className="w-full max-w-[340px] h-[100px] bg-[#111] rounded-xl border border-white/5 p-3 relative transform perspective-[1000px] rotate-x-12 shadow-2xl">
-                     <div className="grid grid-cols-10 gap-1.5 opacity-80">
+                 <div className="w-full max-w-[300px] h-[80px] bg-[#111] rounded-xl border border-white/5 p-2.5 relative transform perspective-[1000px] rotate-x-12 shadow-2xl">
+                     <div className="grid grid-cols-10 gap-1 opacity-80">
                         {[...Array(30)].map((_, i) => (
                              <KeyCap key={i} index={i} />
                         ))}
-                        <div className="col-span-10 h-4 bg-[#222] rounded-[2px] mt-1 opacity-50" />
+                        <div className="col-span-10 h-3 bg-[#222] rounded-[2px] mt-0.5 opacity-50" />
                      </div>
                      {/* Orange Glow Highlight - Moves */}
                      <motion.div 
-                        className="absolute top-1/2 w-12 h-12 bg-brand-orange/20 blur-xl rounded-full" 
+                        className="absolute top-1/2 w-8 h-8 bg-brand-orange/20 blur-lg rounded-full" 
                         animate={{ left: ["20%", "70%", "30%", "60%"] }}
                         transition={{ duration: 4, repeat: Infinity, ease: "linear" }}
                      />
                  </div>
              </div>
 
-             <div className="relative z-10 max-w-xl mx-auto">
-                 <h3 className="text-3xl font-bold text-white mb-4">{BENTO_FEATURES[0].title}</h3>
-                 <p className="text-gray-400 text-lg leading-relaxed">{BENTO_FEATURES[0].description}</p>
+             <div className="relative z-10 max-w-lg mx-auto">
+                 <h3 className="text-2xl font-bold text-white mb-3">{BENTO_FEATURES[0].title}</h3>
+                 <p className="text-gray-400 text-base leading-relaxed">{BENTO_FEATURES[0].description}</p>
              </div>
         </motion.div>
 
@@ -75,34 +75,34 @@ const Works: React.FC = () => {
             whileInView={{ opacity: 1, scale: 1, y: 0 }}
             viewport={{ once: true, margin: "-50px" }}
             transition={{ duration: 0.8, delay: 0.1, ease: [0.22, 1, 0.36, 1] }}
-            className="group relative overflow-hidden rounded-[2.5rem] bg-[#080808] border border-white/10 hover:border-brand-orange/20 transition-all duration-500 h-[650px] flex flex-col items-center justify-between p-12 text-center"
+            className="group relative overflow-hidden rounded-[2rem] bg-[#080808] border border-white/10 hover:border-brand-orange/20 transition-all duration-500 h-[500px] flex flex-col items-center justify-between p-8 text-center"
         >
              {/* Visual: Bar Chart */}
              <div className="w-full flex-1 flex items-center justify-center">
-                <div className="relative w-full max-w-[380px] h-[240px] bg-[#0C0C0C] rounded-2xl border border-white/5 p-6 flex flex-col shadow-2xl overflow-hidden">
+                <div className="relative w-full max-w-[340px] h-[220px] bg-[#0C0C0C] rounded-2xl border border-white/5 p-5 flex flex-col shadow-2xl overflow-hidden scale-95">
                    
                    {/* Chart Header */}
                    <div className="flex justify-between items-center mb-4">
-                       <span className="text-[10px] font-bold text-gray-500 uppercase tracking-widest">Revenue Growth</span>
-                       <span className="text-[10px] font-bold text-brand-orange bg-brand-orange/10 px-2 py-0.5 rounded">LIVE</span>
+                       <span className="text-[9px] font-bold text-gray-500 uppercase tracking-widest">Revenue Growth</span>
+                       <span className="text-[9px] font-bold text-brand-orange bg-brand-orange/10 px-2 py-0.5 rounded">LIVE</span>
                    </div>
 
                    {/* Grid Lines */}
-                   <div className="absolute inset-x-6 top-16 bottom-6 flex flex-col justify-between pointer-events-none opacity-20">
+                   <div className="absolute inset-x-5 top-14 bottom-5 flex flex-col justify-between pointer-events-none opacity-20">
                        <div className="border-t border-dashed border-white/30 w-full" />
                        <div className="border-t border-dashed border-white/30 w-full" />
                        <div className="border-t border-dashed border-white/30 w-full" />
                    </div>
 
                    {/* Bars */}
-                   <div className="flex-1 flex items-end gap-3 relative z-10 px-2 pb-1">
+                   <div className="flex-1 flex items-end gap-2.5 relative z-10 px-1 pb-1">
                         {[35, 45, 40, 60, 55, 75, 50].map((h, i) => (
                             <motion.div 
                                 key={i}
                                 initial={{ height: 0 }}
                                 whileInView={{ height: `${h}%` }}
                                 transition={{ duration: 1, delay: i * 0.1 }}
-                                className="flex-1 bg-[#222] rounded-t-md hover:bg-[#333] transition-colors"
+                                className="flex-1 bg-[#222] rounded-t-sm hover:bg-[#333] transition-colors"
                             />
                         ))}
                         
@@ -111,14 +111,14 @@ const Works: React.FC = () => {
                             initial={{ height: 0 }}
                             whileInView={{ height: "100%" }}
                             transition={{ duration: 1.2, delay: 0.8, type: "spring" }}
-                            className="flex-1 bg-brand-orange rounded-t-md relative group-hover:brightness-110 shadow-[0_0_20px_rgba(255,92,0,0.3)]"
+                            className="flex-1 bg-brand-orange rounded-t-sm relative group-hover:brightness-110 shadow-[0_0_20px_rgba(255,92,0,0.3)]"
                         >
                             {/* Label */}
                             <motion.div 
                                 initial={{ opacity: 0, scale: 0.5 }}
                                 whileInView={{ opacity: 1, scale: 1 }}
                                 transition={{ delay: 1.5 }}
-                                className="absolute -top-10 left-1/2 -translate-x-1/2 bg-white text-black text-[10px] font-bold px-2 py-1 rounded shadow-lg whitespace-nowrap"
+                                className="absolute -top-9 left-1/2 -translate-x-1/2 bg-white text-black text-[9px] font-bold px-1.5 py-0.5 rounded shadow-lg whitespace-nowrap"
                             >
                                 $10k+
                                 <div className="absolute top-full left-1/2 -translate-x-1/2 border-4 border-transparent border-t-white" />
@@ -128,9 +128,9 @@ const Works: React.FC = () => {
                 </div>
              </div>
 
-             <div className="relative z-10 max-w-xl mx-auto">
-                 <h3 className="text-3xl font-bold text-white mb-4">{BENTO_FEATURES[1].title}</h3>
-                 <p className="text-gray-400 text-lg leading-relaxed">{BENTO_FEATURES[1].description}</p>
+             <div className="relative z-10 max-w-lg mx-auto">
+                 <h3 className="text-2xl font-bold text-white mb-3">{BENTO_FEATURES[1].title}</h3>
+                 <p className="text-gray-400 text-base leading-relaxed">{BENTO_FEATURES[1].description}</p>
              </div>
         </motion.div>
 
@@ -140,14 +140,14 @@ const Works: React.FC = () => {
             whileInView={{ opacity: 1, scale: 1, y: 0 }}
             viewport={{ once: true, margin: "-50px" }}
             transition={{ duration: 0.8, delay: 0.2, ease: [0.22, 1, 0.36, 1] }}
-            className="group relative overflow-hidden rounded-[2.5rem] bg-[#080808] border border-white/10 hover:border-brand-orange/20 transition-all duration-500 min-h-[500px] flex flex-col items-center justify-between p-12 text-center lg:col-span-1"
+            className="group relative overflow-hidden rounded-[2rem] bg-[#080808] border border-white/10 hover:border-brand-orange/20 transition-all duration-500 min-h-[400px] flex flex-col items-center justify-between p-8 text-center lg:col-span-1"
         >
               {/* New Global Sales Visual */}
               <SalesTeamVisual />
 
-             <div className="relative z-10 max-w-2xl">
-                 <h3 className="text-3xl font-bold text-white mb-4">{BENTO_FEATURES[2].title}</h3>
-                 <p className="text-gray-400 text-lg leading-relaxed">{BENTO_FEATURES[2].description}</p>
+             <div className="relative z-10 max-w-xl">
+                 <h3 className="text-2xl font-bold text-white mb-3">{BENTO_FEATURES[2].title}</h3>
+                 <p className="text-gray-400 text-base leading-relaxed">{BENTO_FEATURES[2].description}</p>
              </div>
         </motion.div>
 
@@ -157,19 +157,19 @@ const Works: React.FC = () => {
             whileInView={{ opacity: 1, scale: 1, y: 0 }}
             viewport={{ once: true, margin: "-50px" }}
             transition={{ duration: 0.8, delay: 0.3, ease: [0.22, 1, 0.36, 1] }}
-            className="group relative overflow-hidden rounded-[2.5rem] bg-[#080808] border border-white/10 hover:border-brand-orange/20 transition-all duration-500 min-h-[500px] flex flex-col p-12 lg:col-span-1 text-center"
+            className="group relative overflow-hidden rounded-[2rem] bg-[#080808] border border-white/10 hover:border-brand-orange/20 transition-all duration-500 min-h-[400px] flex flex-col p-8 lg:col-span-1 text-center"
         >
-             <div className="text-center mb-10">
-                 <h3 className="text-3xl font-bold text-white mb-4">{BENTO_FEATURES[3].title}</h3>
-                 <p className="text-gray-400 text-lg leading-relaxed">{BENTO_FEATURES[3].description}</p>
+             <div className="text-center mb-8">
+                 <h3 className="text-2xl font-bold text-white mb-3">{BENTO_FEATURES[3].title}</h3>
+                 <p className="text-gray-400 text-base leading-relaxed">{BENTO_FEATURES[3].description}</p>
              </div>
 
-             <div className="flex-1 w-full max-w-md mx-auto">
-                 <div className="bg-[#111] rounded-2xl border border-white/5 p-1">
+             <div className="flex-1 w-full max-w-sm mx-auto">
+                 <div className="bg-[#111] rounded-xl border border-white/5 p-1">
                     {AGENCY_STATS.map((stat, idx) => (
-                        <div key={idx} className="flex items-center justify-between p-4 border-b border-white/5 last:border-0 hover:bg-[#1a1a1a] transition-colors rounded-xl">
-                            <span className="text-gray-400 text-sm font-medium">{stat.label}</span>
-                            <span className="text-white font-bold">{stat.value}</span>
+                        <div key={idx} className="flex items-center justify-between p-3.5 border-b border-white/5 last:border-0 hover:bg-[#1a1a1a] transition-colors rounded-lg">
+                            <span className="text-gray-400 text-xs font-medium">{stat.label}</span>
+                            <span className="text-white font-bold text-sm">{stat.value}</span>
                         </div>
                     ))}
                  </div>
@@ -185,44 +185,44 @@ const Works: React.FC = () => {
 
 const SalesTeamVisual = () => {
     return (
-        <div className="relative w-full h-[320px] flex items-center justify-center overflow-visible">
+        <div className="relative w-full h-[240px] flex items-center justify-center overflow-visible scale-90">
             {/* Background Radar Effect */}
             <div className="absolute inset-0 flex items-center justify-center opacity-30">
-                 <div className="w-[280px] h-[280px] border border-white/10 rounded-full border-dashed" />
-                 <div className="absolute w-[180px] h-[180px] border border-white/10 rounded-full" />
+                 <div className="w-[220px] h-[220px] border border-white/10 rounded-full border-dashed" />
+                 <div className="absolute w-[140px] h-[140px] border border-white/10 rounded-full" />
                  <motion.div 
                     animate={{ rotate: 360 }}
                     transition={{ duration: 10, repeat: Infinity, ease: "linear" }}
-                    className="absolute w-[280px] h-[280px] bg-[conic-gradient(from_0deg,transparent_0deg,rgba(255,92,0,0.1)_60deg,transparent_60deg)] rounded-full mix-blend-overlay"
+                    className="absolute w-[220px] h-[220px] bg-[conic-gradient(from_0deg,transparent_0deg,rgba(255,92,0,0.1)_60deg,transparent_60deg)] rounded-full mix-blend-overlay"
                  />
             </div>
 
             {/* Central Hub */}
-            <div className="relative z-20 w-20 h-20 bg-[#0a0a0a] rounded-full border border-white/10 flex flex-col items-center justify-center shadow-[0_0_40px_rgba(255,92,0,0.2)]">
+            <div className="relative z-20 w-16 h-16 bg-[#0a0a0a] rounded-full border border-white/10 flex flex-col items-center justify-center shadow-[0_0_40px_rgba(255,92,0,0.2)]">
                  <div className="absolute inset-0 rounded-full bg-brand-orange/5 animate-pulse" />
-                 <Globe className="w-8 h-8 text-brand-orange opacity-90" />
-                 <div className="absolute -bottom-2 px-2 py-0.5 bg-brand-orange text-[8px] font-bold text-white rounded-full">
+                 <Globe className="w-6 h-6 text-brand-orange opacity-90" />
+                 <div className="absolute -bottom-1.5 px-1.5 py-0.5 bg-brand-orange text-[7px] font-bold text-white rounded-full">
                     24/7
                  </div>
             </div>
 
             {/* Orbiting Closers */}
-            <OrbitingCloser delay={0} radius={100} duration={12} img="https://api.dicebear.com/7.x/avataaars/svg?seed=Felix" />
-            <OrbitingCloser delay={4} radius={100} duration={12} img="https://api.dicebear.com/7.x/avataaars/svg?seed=Aneka" />
-            <OrbitingCloser delay={8} radius={100} duration={12} img="https://api.dicebear.com/7.x/avataaars/svg?seed=Mark" />
+            <OrbitingCloser delay={0} radius={80} duration={12} img="https://api.dicebear.com/7.x/avataaars/svg?seed=Felix" />
+            <OrbitingCloser delay={4} radius={80} duration={12} img="https://api.dicebear.com/7.x/avataaars/svg?seed=Aneka" />
+            <OrbitingCloser delay={8} radius={80} duration={12} img="https://api.dicebear.com/7.x/avataaars/svg?seed=Mark" />
 
             {/* Live Activity Popups */}
             <LiveActivityCard 
                 text="Deal Closed" 
                 amount="+$3,500" 
                 img="https://api.dicebear.com/7.x/avataaars/svg?seed=Felix"
-                x={-90} y={-80} delay={2} 
+                x={-70} y={-60} delay={2} 
             />
              <LiveActivityCard 
                 text="In Call..." 
                 type="call"
                 img="https://api.dicebear.com/7.x/avataaars/svg?seed=Aneka"
-                x={90} y={60} delay={5} 
+                x={70} y={40} delay={5} 
             />
         </div>
     )
@@ -231,7 +231,7 @@ const SalesTeamVisual = () => {
 const OrbitingCloser = ({ radius, duration, delay, img }: any) => {
     return (
         <motion.div
-            className="absolute w-12 h-12"
+            className="absolute w-10 h-10"
             animate={{ rotate: 360 }}
             transition={{ duration: duration, repeat: Infinity, ease: "linear", delay: -delay }}
             style={{ 
@@ -242,13 +242,13 @@ const OrbitingCloser = ({ radius, duration, delay, img }: any) => {
         >
              <div className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2">
                  <motion.div 
-                    className="w-10 h-10 rounded-full border-2 border-[#111] bg-[#222] overflow-hidden relative z-10"
+                    className="w-8 h-8 rounded-full border-2 border-[#111] bg-[#222] overflow-hidden relative z-10"
                     animate={{ rotate: -360 }}
                     transition={{ duration: duration, repeat: Infinity, ease: "linear", delay: -delay }}
                  >
                      <img src={img} alt="Closer" className="w-full h-full object-cover" />
                      {/* Online Indicator */}
-                     <div className="absolute bottom-0 right-0 w-2.5 h-2.5 bg-green-500 rounded-full border border-[#111]" />
+                     <div className="absolute bottom-0 right-0 w-2 h-2 bg-green-500 rounded-full border border-[#111]" />
                  </motion.div>
              </div>
         </motion.div>
@@ -271,15 +271,15 @@ const LiveActivityCard = ({ text, amount, img, x, y, delay, type }: any) => {
                 delay: delay, 
                 repeatDelay: 3 
             }}
-            className="absolute z-30 flex items-center gap-3 p-2 pr-4 bg-[#0a0a0a]/90 backdrop-blur-md border border-white/10 rounded-full shadow-2xl"
+            className="absolute z-30 flex items-center gap-2 p-1.5 pr-3 bg-[#0a0a0a]/90 backdrop-blur-md border border-white/10 rounded-full shadow-2xl"
             style={{ marginLeft: x, marginTop: y }}
         >
-            <div className={`w-8 h-8 rounded-full flex items-center justify-center ${isDeal ? 'bg-green-500/20' : 'bg-blue-500/20'}`}>
-                {isDeal ? <DollarSign className="w-4 h-4 text-green-500" /> : <Phone className="w-4 h-4 text-blue-500" />}
+            <div className={`w-6 h-6 rounded-full flex items-center justify-center ${isDeal ? 'bg-green-500/20' : 'bg-blue-500/20'}`}>
+                {isDeal ? <DollarSign className="w-3 h-3 text-green-500" /> : <Phone className="w-3 h-3 text-blue-500" />}
             </div>
             <div className="flex flex-col items-start">
-                <span className="text-[10px] text-gray-400 font-medium uppercase tracking-wider">{text}</span>
-                {amount && <span className="text-xs font-bold text-white">{amount}</span>}
+                <span className="text-[9px] text-gray-400 font-medium uppercase tracking-wider">{text}</span>
+                {amount && <span className="text-[10px] font-bold text-white">{amount}</span>}
             </div>
         </motion.div>
     )
@@ -296,7 +296,7 @@ const AnimatedStatusRow: React.FC<{ label: string; targetStatus: string; color: 
     }, [targetStatus, delay]);
 
     return (
-        <div className="flex items-center justify-between bg-[#151515] p-2.5 rounded-lg border border-white/5">
+        <div className="flex items-center justify-between bg-[#151515] p-2 rounded-lg border border-white/5">
             <span className="text-gray-400 pl-1">{label}</span>
             <div className="flex items-center gap-1.5">
                 <span className={`font-bold transition-all duration-500 ${status === 'Pending...' ? 'text-gray-600' : color}`}>
@@ -304,7 +304,7 @@ const AnimatedStatusRow: React.FC<{ label: string; targetStatus: string; color: 
                 </span>
                 {status !== 'Pending...' && (
                     <motion.div initial={{ scale: 0 }} animate={{ scale: 1 }}>
-                        <Check className={`w-3 h-3 ${color}`} />
+                        <Check className={`w-2.5 h-2.5 ${color}`} />
                     </motion.div>
                 )}
             </div>
@@ -312,10 +312,10 @@ const AnimatedStatusRow: React.FC<{ label: string; targetStatus: string; color: 
     );
 };
 
-const KeyCap = ({ index }: { index: number }) => {
+const KeyCap: React.FC<{ index: number }> = ({ index }) => {
     return (
         <motion.div 
-            className={`rounded-[2px] bg-[#222] ${index >= 30 ? 'h-3' : 'h-3'}`}
+            className={`rounded-[1px] bg-[#222] ${index >= 30 ? 'h-2.5' : 'h-2.5'}`}
             style={{ 
                 gridColumn: index === 35 ? 'span 4' : 'span 1' 
             }}
