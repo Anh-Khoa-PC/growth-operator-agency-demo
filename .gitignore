@@ -1,0 +1,6 @@
+node_modules/
+.env
+dist/
+# Nếu có folder nào lạ đang bị up lên, hãy viết tên nó vào đây
+dongbohang/
+crypto/
