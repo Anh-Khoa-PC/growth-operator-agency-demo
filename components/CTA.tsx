@@ -20,11 +20,15 @@ const CTA: React.FC = () => {
       
       <div className="container mx-auto px-6 relative z-10 text-center">
         <div className="max-w-4xl mx-auto">
-          {/* Logo element small */}
+          {/* Logo element small - Text Only */}
           <div className="flex justify-center mb-8">
-             <div className="flex flex-col items-center">
-                <div className="text-white font-bold text-xl tracking-tight mb-1">growth operator</div>
-                <div className="text-gray-500 text-xs font-medium tracking-widest">agency.com</div>
+             <div className="flex flex-col items-center gap-1">
+                <div className="text-white font-bold text-3xl tracking-tight leading-none">
+                    Creaty<span className="text-brand-orange">x</span>
+                </div>
+                <div className="text-gray-500 text-[10px] font-medium tracking-[0.3em] uppercase opacity-70">
+                    Growth Agency
+                </div>
              </div>
           </div>
 

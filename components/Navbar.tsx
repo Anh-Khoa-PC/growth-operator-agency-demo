@@ -30,7 +30,7 @@ const Navbar: React.FC = () => {
     
     if (elem) {
         // Offset for fixed header (increased due to larger nav)
-        const offset = 120;
+        const offset = 100;
         const elementPosition = elem.getBoundingClientRect().top;
         const offsetPosition = elementPosition + window.scrollY - offset;
 
@@ -45,20 +45,22 @@ const Navbar: React.FC = () => {
   return (
     <nav 
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        isScrolled ? 'bg-black/80 backdrop-blur-md border-b border-white/5 py-4' : 'bg-transparent py-6 md:py-8'
+        isScrolled ? 'bg-transparent py-4' : 'bg-transparent py-6 md:py-8'
       }`}
     >
       <div className="container mx-auto px-6 md:px-12 max-w-[1600px] flex items-center justify-between relative">
-        {/* Logo */}
+        {/* Logo - Creatyx (Text Only) */}
         <a 
             href="#" 
             onClick={(e) => handleSmoothScroll(e, '#')}
-            className="flex flex-col leading-none group relative z-20"
+            className="flex items-center gap-2 group relative z-20"
         >
-          <div className="flex items-center gap-1">
-             <div className="text-white font-bold text-2xl md:text-3xl lg:text-4xl tracking-tight">Growth Operator</div>
+          {/* Text Logo */}
+          <div className="flex flex-col justify-center">
+            <span className="text-3xl font-bold text-white tracking-tight leading-none group-hover:text-white/90 transition-colors font-sans">
+                Creaty<span className="text-brand-orange">x</span>
+            </span>
           </div>
-          <div className="text-brand-orange text-xs md:text-sm lg:text-base font-bold tracking-[0.2em] uppercase mt-1">Agency</div>
         </a>
 
         {/* Desktop Nav - Absolute Center for perfect alignment */}
@@ -77,7 +79,7 @@ const Navbar: React.FC = () => {
 
         {/* CTA */}
         <div className="hidden md:block relative z-20">
-            <Button variant="beam" className="text-base md:text-lg px-8 py-4">
+            <Button variant="beam" className="text-base md:text-lg px-8 py-3">
               {HERO_CONTENT.cta}
             </Button>
         </div>

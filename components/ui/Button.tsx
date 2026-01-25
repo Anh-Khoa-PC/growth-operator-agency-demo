@@ -3,12 +3,14 @@ import { ArrowUpRight } from 'lucide-react';
 
 interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
   variant?: 'primary' | 'secondary' | 'outline' | 'text' | 'beam';
+  size?: 'sm' | 'default' | 'lg';
   children: React.ReactNode;
   icon?: boolean;
 }
 
 const Button: React.FC<ButtonProps> = ({ 
   variant = 'primary', 
+  size = 'default',
   children, 
   icon = true,
   className = '',
@@ -24,6 +26,13 @@ const Button: React.FC<ButtonProps> = ({
     beam: "rounded-xl p-[1px] md:p-[0.5px] overflow-hidden" 
   };
 
+  // Sizes for Beam variant (applied to inner span)
+  const beamSizes = {
+    sm: "px-6 py-2.5 text-xs",
+    default: "px-9 py-4 text-base",
+    lg: "px-12 py-5 text-lg md:text-xl md:px-14 md:py-6" // Extra large for main CTAs
+  };
+
   if (variant === 'beam') {
     return (
       <button className={`${baseStyles} ${variants.beam} ${className}`} {...props}>
@@ -31,7 +40,7 @@ const Button: React.FC<ButtonProps> = ({
         <span className="absolute inset-[-1000%] animate-[spin_4s_linear_infinite] bg-[conic-gradient(from_90deg_at_50%_50%,transparent_0%,#ff6b00_10%,transparent_20%)]" />
         
         {/* Inner Button Content - Increased Size */}
-        <span className="inline-flex h-full w-full cursor-pointer items-center justify-center rounded-xl bg-[#0a0a0a] px-9 py-4 text-base font-bold text-white backdrop-blur-3xl transition-all group-hover:bg-[#151515]">
+        <span className={`inline-flex h-full w-full cursor-pointer items-center justify-center rounded-xl bg-[#0a0a0a] font-bold text-white backdrop-blur-3xl transition-all group-hover:bg-[#151515] ${beamSizes[size]}`}>
           <span className="relative flex items-center gap-2">
             {children}
             {icon && (

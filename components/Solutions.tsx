@@ -1,8 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import SectionWrapper from './ui/SectionWrapper';
-import { SOLUTIONS } from '../constants';
+import { SOLUTIONS, HERO_CONTENT } from '../constants';
 import { motion } from 'framer-motion';
 import { Box, Settings, Mail, Archive, Folder, CreditCard, Zap, User, Clock, CheckCircle2, Split } from 'lucide-react';
+import Button from './ui/Button';
 
 const Solutions: React.FC = () => {
   return (
@@ -11,6 +12,12 @@ const Solutions: React.FC = () => {
         <h2 className="text-3xl md:text-5xl lg:text-6xl font-bold text-white mb-6 leading-[1.1] tracking-tight">
           Complete Backend Solutions <br className="hidden md:block" /> For Creators & Coaches
         </h2>
+        
+        {/* Added Intro Line */}
+        <p className="text-brand-orange font-medium text-lg md:text-xl mb-4">
+            We create Commercial Systems, closers to their offer.
+        </p>
+
         <p className="text-gray-400 text-lg md:text-xl max-w-2xl mx-auto leading-relaxed">
           from course creation to automated funnels, we handle every technical detail so you can focus on what matters most to you
         </p>
@@ -46,6 +53,19 @@ const Solutions: React.FC = () => {
         </SolutionCard>
 
       </div>
+
+      {/* Added CTA Button */}
+      <motion.div 
+        initial={{ opacity: 0, y: 20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        transition={{ delay: 0.4, duration: 0.8 }}
+        className="flex justify-center mt-16 relative z-10"
+      >
+        <Button variant="beam" size="lg" className="shadow-[0_20px_50px_rgba(255,92,0,0.15)]">
+          {HERO_CONTENT.cta}
+        </Button>
+      </motion.div>
     </SectionWrapper>
   );
 };

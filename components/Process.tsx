@@ -1,6 +1,7 @@
 import React from 'react';
 import SectionWrapper from './ui/SectionWrapper';
-import { PROCESS_STEPS } from '../constants';
+import { PROCESS_STEPS, HERO_CONTENT } from '../constants';
+import Button from './ui/Button';
 
 const Process: React.FC = () => {
   return (
@@ -13,6 +14,11 @@ const Process: React.FC = () => {
           <p className="text-gray-400 text-lg mb-8">
             Our proprietary 3-step framework is designed to remove you from the day-to-day operations while skyrocketing your revenue.
           </p>
+          <div className="mt-10 flex justify-center lg:justify-center">
+            <Button variant="beam" size="lg" className="shadow-[0_20px_50px_rgba(255,92,0,0.1)]">
+                {HERO_CONTENT.cta}
+            </Button>
+          </div>
         </div>
 
         <div className="space-y-8">

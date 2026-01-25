@@ -1,8 +1,9 @@
 import React from 'react';
 import SectionWrapper from './ui/SectionWrapper';
-import { BENEFITS } from '../constants';
+import { BENEFITS, HERO_CONTENT } from '../constants';
 import { motion } from 'framer-motion';
 import TextReveal from './ui/TextReveal';
+import Button from './ui/Button';
 
 const Benefits: React.FC = () => {
   return (
@@ -21,7 +22,7 @@ const Benefits: React.FC = () => {
         </p>
       </div>
 
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-[1200px] mx-auto px-6">
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-[1200px] mx-auto px-6 mb-12">
         {BENEFITS.map((benefit, index) => (
           <motion.div
             key={index}
@@ -53,6 +54,19 @@ const Benefits: React.FC = () => {
           </motion.div>
         ))}
       </div>
+
+      {/* Added CTA Button */}
+      <motion.div 
+        initial={{ opacity: 0, y: 20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        transition={{ delay: 0.4, duration: 0.8 }}
+        className="flex justify-center relative z-10"
+      >
+        <Button variant="beam" size="lg" className="shadow-[0_20px_50px_rgba(255,92,0,0.15)]">
+          {HERO_CONTENT.cta}
+        </Button>
+      </motion.div>
     </SectionWrapper>
   );
 };

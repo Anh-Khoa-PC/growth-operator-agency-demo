@@ -1,7 +1,7 @@
 import { Brain, ThumbsUp, Users, Smartphone, Monitor, Mail, Box, Activity, Settings, DollarSign, Clock, Layers, ShieldCheck, MousePointerClick, Zap, Target } from 'lucide-react';
 import { ServiceItem, MetricItem, WorkItem, FAQItem, NavLink, TestimonialItem } from './types';
 
-export const COMPANY_NAME = "Growth Operator Agency";
+export const COMPANY_NAME = "Creatyx";
 
 export const NAV_LINKS: NavLink[] = [
   { name: 'Why Us', href: '#why-us' },
@@ -11,10 +11,10 @@ export const NAV_LINKS: NavLink[] = [
 ];
 
 export const HERO_CONTENT = {
-  badge: "Limited Client Capacity. Spoiler: It never does.",
+  badge: "You pay nothing, only result commission",
   headlinePart1: "We create your offer from A to Z, market it,",
   headlinePart2: "and scale it to over €30,000/month in under 60 days.",
-  subheadline: "You pay nothing, only result commission.",
+  subheadline: "We turn audiences into revenue.",
   cta: "Apply Now"
 };
 
@@ -131,13 +131,13 @@ export const FAQS: FAQItem[] = [
   },
   {
     question: "Who is this service for?",
-    answer: "It's for influencers (KOCs, Coaches) who have an existing following and want to convert it into sustainable income."
+    answer: "We collaborate with established content creators and influencers who have built engaged communities, enabling effective audience monetization."
   }
 ];
 
 export const TESTIMONIALS: TestimonialItem[] = [
   {
-    quote: "Working with Growth Operator was the best decision I made for my personal brand. They handled everything.",
+    quote: "Working with Creatyx was the best decision I made for my personal brand. They handled everything.",
     author: "Sarah Jenkins",
     role: "Lifestyle Coach",
     company: "SJ Coaching"

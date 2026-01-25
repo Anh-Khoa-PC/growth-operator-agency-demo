@@ -19,7 +19,7 @@ const Hero: React.FC = () => {
   const hasSpoiler = parts.length > 1;
 
   return (
-    <section className="relative min-h-screen flex items-center justify-center px-4 py-20 overflow-hidden bg-black selection:bg-brand-orange/30">
+    <section className="relative min-h-screen flex items-center justify-center px-4 pt-32 pb-20 md:pt-48 overflow-hidden bg-black selection:bg-brand-orange/30">
       {/* Dynamic Background with Parallax */}
       <motion.div 
         style={{ y: bgY, opacity }}
@@ -43,14 +43,14 @@ const Hero: React.FC = () => {
               initial={{ opacity: 0, y: -20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6 }}
-              className="inline-flex items-center gap-3 px-4 py-2 rounded-full bg-[#0a0a0a] border border-white/10 backdrop-blur-xl mb-6 hover:border-brand-orange/20 transition-all shadow-[0_0_30px_rgba(0,0,0,0.6)] group cursor-default"
+              className="inline-flex items-center gap-3 px-4 py-2 rounded-full bg-[#0a0a0a] border border-white/10 backdrop-blur-xl mb-8 hover:border-brand-orange/20 transition-all shadow-[0_0_30px_rgba(0,0,0,0.6)] group cursor-default"
             >
               <div className="flex items-center gap-2">
                 <span className="relative flex h-2 w-2">
                   <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-brand-orange opacity-75"></span>
                   <span className="relative inline-flex rounded-full h-1.5 w-1.5 bg-brand-orange shadow-[0_0_10px_#ff6b00]"></span>
                 </span>
-                <span className="text-gray-200 text-xs font-medium tracking-wide uppercase group-hover:text-white transition-colors">
+                <span className="text-gray-200 text-[10px] md:text-xs font-medium tracking-wide uppercase group-hover:text-white transition-colors">
                   {hasSpoiler ? (
                     <>
                       {parts[0]}
@@ -64,13 +64,13 @@ const Hero: React.FC = () => {
               </div>
             </motion.div>
 
-            {/* Headline - Clean & Sharp with Balance */}
+            {/* Headline - Reduced Size & Clean */}
             <div className="flex flex-col items-center justify-center mb-8 mx-auto w-full relative z-20">
               <motion.h1 
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8 }}
-                className="text-4xl md:text-6xl lg:text-7xl font-bold tracking-tight text-white leading-[1.1] text-center max-w-5xl mx-auto [text-wrap:balance]"
+                className="text-3xl md:text-5xl lg:text-6xl font-bold tracking-tight text-white leading-[1.1] text-center max-w-4xl mx-auto [text-wrap:balance]"
               >
                 <span className="text-white inline-block mb-1 md:mb-2">{HERO_CONTENT.headlinePart1}</span>
                 <br className="hidden md:block" />
@@ -80,15 +80,15 @@ const Hero: React.FC = () => {
               </motion.h1>
             </div>
 
-            {/* Subtext Container - Dark Rounded Box (Pill shape) */}
+            {/* Subtext Container - Reduced Size */}
             <motion.div 
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.4 }}
-              className="relative mb-10 max-w-3xl mx-auto"
+              className="relative mb-10 max-w-2xl mx-auto"
             >
-               <div className="inline-block bg-[#050505] border border-white/10 rounded-full px-6 py-3 shadow-[0_10px_40px_rgba(0,0,0,0.5)] backdrop-blur-sm">
-                   <p className="text-gray-300 text-base md:text-lg font-medium leading-tight">
+               <div className="inline-block bg-[#050505] border border-white/10 rounded-full px-5 py-2.5 shadow-[0_10px_40px_rgba(0,0,0,0.5)] backdrop-blur-sm">
+                   <p className="text-gray-300 text-sm md:text-base font-medium leading-tight">
                       {HERO_CONTENT.subheadline}
                    </p>
                </div>
@@ -101,7 +101,7 @@ const Hero: React.FC = () => {
               transition={{ delay: 0.6 }}
               className="flex justify-center relative z-10"
             >
-              <Button variant="beam" className="text-base px-10 py-5 shadow-[0_20px_50px_rgba(255,92,0,0.1)]">
+              <Button variant="beam" className="text-sm md:text-base px-8 py-4 shadow-[0_20px_50px_rgba(255,92,0,0.1)]">
                 {HERO_CONTENT.cta}
               </Button>
             </motion.div>
