@@ -5,50 +5,49 @@ import { motion } from 'framer-motion';
 
 const Mission: React.FC = () => {
   return (
-    <SectionWrapper id="mission" className="bg-black py-16 md:py-20">
-      <div className="max-w-[1200px] mx-auto px-6 text-center">
+    <SectionWrapper id="mission" className="bg-black py-20 md:py-24">
+      <div className="max-w-[1100px] mx-auto px-6 text-center">
         
-        {/* Badge - Increased Size */}
+        {/* Badge - Tinh chỉnh lại cho thanh thoát */}
         <motion.div 
-          initial={{ opacity: 0, y: -20 }}
+          initial={{ opacity: 0, y: -15 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
-          className="inline-flex items-center justify-center px-6 py-2.5 rounded-full border border-white/10 bg-white/5 backdrop-blur-sm mb-10"
+          transition={{ duration: 0.7 }}
+          className="inline-flex items-center justify-center px-5 py-1.5 rounded-full border border-white/5 bg-white/5 backdrop-blur-sm mb-10"
         >
-          <span className="text-gray-400 text-sm uppercase tracking-widest font-bold">Our Mission</span>
+          <span className="text-gray-500 text-[10px] md:text-xs uppercase tracking-[0.3em] font-bold">Our Mission</span>
         </motion.div>
 
-        {/* Headline - Scaled Down */}
-        <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6 leading-[1.1] tracking-tight">
+        {/* Headline - Đã hạ về 6xl (Mức cân đối nhất) */}
+        <h2 className="text-4xl md:text-5xl lg:text-6xl font-black text-white mb-8 leading-[1.15] tracking-tight">
           We Help <span className="text-brand-orange">Creators & Coaches</span> <br className="hidden md:block" />
           Scale with our <span className="text-brand-orange">done-for-you</span> <br className="hidden md:block" />
-          systems and proven <br className="hidden md:block" />
-          <span className="text-brand-orange">automations</span>
+          systems and proven <span className="text-brand-orange">automations</span>
         </h2>
 
-        {/* Subheadline - Scaled Down */}
+        {/* Subheadline - Đưa về mức dễ đọc, không quá choáng ngợp */}
         <motion.div 
-          initial={{ opacity: 0, y: 30 }}
+          initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          transition={{ delay: 0.2, duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
-          className="max-w-3xl mx-auto mb-8"
+          transition={{ delay: 0.2, duration: 0.8 }}
+          className="max-w-2xl mx-auto mb-12"
         >
-          <p className="text-gray-400 text-lg md:text-xl leading-relaxed">
-            <span className="bg-brand-orange text-white px-2 py-0.5 rounded text-base font-semibold mr-2 inline-block">Skip</span>
+          <p className="text-gray-400 text-base md:text-xl leading-relaxed opacity-90 font-medium">
+            <span className="text-brand-orange font-bold mr-1.5">Skip</span>
             the tech overwhelm and backend complexity. We handle everything behind the scenes so you can focus on what you do best.
           </p>
         </motion.div>
 
-        {/* CTA */}
+        {/* CTA - Giữ nguyên sự mạnh mẽ nhưng size vừa phải */}
         <motion.a 
           href="#contact" 
-          initial={{ opacity: 0, y: 20 }}
+          initial={{ opacity: 0, y: 15 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          transition={{ delay: 0.4, duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
-          className="inline-flex items-center gap-2 text-brand-orange text-lg font-medium hover:text-white transition-colors group cursor-pointer"
+          transition={{ delay: 0.4, duration: 0.8 }}
+          className="inline-flex items-center gap-2.5 text-brand-orange text-lg font-black hover:text-white transition-all group cursor-pointer border-b-2 border-brand-orange/20 pb-1.5"
         >
           Apply to Work With Us
           <ArrowUpRight className="w-5 h-5 transition-transform group-hover:-translate-y-1 group-hover:translate-x-1" />
