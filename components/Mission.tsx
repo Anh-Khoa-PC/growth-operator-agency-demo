@@ -8,15 +8,15 @@ const Mission: React.FC = () => {
     <SectionWrapper id="mission" className="bg-black py-16 md:py-20">
       <div className="max-w-[1200px] mx-auto px-6 text-center">
         
-        {/* Badge */}
+        {/* Badge - Increased Size */}
         <motion.div 
           initial={{ opacity: 0, y: -20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
-          className="inline-flex items-center justify-center px-4 py-1.5 rounded-full border border-white/10 bg-white/5 backdrop-blur-sm mb-8"
+          className="inline-flex items-center justify-center px-6 py-2.5 rounded-full border border-white/10 bg-white/5 backdrop-blur-sm mb-10"
         >
-          <span className="text-gray-400 text-xs uppercase tracking-widest font-medium">Our Mission</span>
+          <span className="text-gray-400 text-sm uppercase tracking-widest font-bold">Our Mission</span>
         </motion.div>
 
         {/* Headline - Scaled Down */}

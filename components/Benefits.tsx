@@ -9,8 +9,8 @@ const Benefits: React.FC = () => {
   return (
     <SectionWrapper id="why-us" className="bg-black py-12 md:py-16">
       <div className="mb-12 text-center max-w-3xl mx-auto flex flex-col items-center">
-         <div className="mb-6">
-            <span className="px-4 py-1.5 rounded-full border border-white/10 text-brand-orange text-xs font-bold tracking-widest uppercase">Why Choose Us</span>
+         <div className="mb-8">
+            <span className="px-6 py-2.5 rounded-full border border-white/10 text-brand-orange text-sm font-bold tracking-widest uppercase">Why Choose Us</span>
          </div>
         
         <TextReveal className="text-3xl md:text-5xl font-bold text-white mb-4 justify-center">

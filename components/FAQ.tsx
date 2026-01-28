@@ -25,8 +25,8 @@ const FAQ: React.FC = () => {
   return (
     <SectionWrapper id="faq" className="bg-black">
       <div className="text-center mb-16">
-         <div className="inline-block mb-6">
-            <span className="px-4 py-2 rounded-full border border-white/10 text-gray-400 text-xs font-medium">Need to Know</span>
+         <div className="inline-block mb-8">
+            <span className="px-6 py-2.5 rounded-full border border-white/10 text-gray-300 text-sm font-bold tracking-wide">Need to Know</span>
          </div>
          <h2 className="text-3xl md:text-5xl font-bold text-white">
             Frequently Asked Questions

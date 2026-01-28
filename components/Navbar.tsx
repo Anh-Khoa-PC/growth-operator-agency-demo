@@ -17,60 +17,60 @@ const Navbar: React.FC = () => {
 
   const handleSmoothScroll = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
     e.preventDefault();
-    
-    // Handle "Back to Top" or Logo click
     if (href === '#') {
-        window.scrollTo({ top: 0, behavior: 'smooth' });
-        setIsMobileMenuOpen(false);
-        return;
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+      setIsMobileMenuOpen(false);
+      return;
     }
-
     const targetId = href.replace('#', '');
     const elem = document.getElementById(targetId);
-    
     if (elem) {
-        // Offset for fixed header (increased due to larger nav)
-        const offset = 100;
-        const elementPosition = elem.getBoundingClientRect().top;
-        const offsetPosition = elementPosition + window.scrollY - offset;
-
-        window.scrollTo({
-            top: offsetPosition,
-            behavior: 'smooth'
-        });
+      const offset = 80;
+      const elementPosition = elem.getBoundingClientRect().top;
+      const offsetPosition = elementPosition + window.scrollY - offset;
+      window.scrollTo({ top: offsetPosition, behavior: 'smooth' });
     }
     setIsMobileMenuOpen(false);
   };
 
   return (
-    <nav 
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        isScrolled ? 'bg-transparent py-4' : 'bg-transparent py-6 md:py-8'
+    <nav
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 bg-transparent ${
+        isScrolled ? 'h-16' : 'h-24'
       }`}
     >
-      <div className="container mx-auto px-6 md:px-12 max-w-[1600px] flex items-center justify-between relative">
-        {/* Logo - Creatyx (Text Only) */}
-        <a 
-            href="#" 
+      <div className="container mx-auto px-6 md:px-12 max-w-[1600px] h-full flex items-center justify-between relative">
+        
+        {/* LOGO AREA - FIX LỆCH BẰNG ABSOLUTE */}
+        <div className="flex items-center h-full w-32 md:w-48 relative z-50">
+          <a
+            href="#"
             onClick={(e) => handleSmoothScroll(e, '#')}
-            className="flex items-center gap-2 group relative z-20"
-        >
-          {/* Text Logo */}
-          <div className="flex flex-col justify-center">
-            <span className="text-3xl font-bold text-white tracking-tight leading-none group-hover:text-white/90 transition-colors font-sans">
-                Creaty<span className="text-brand-orange">x</span>
-            </span>
-          </div>
-        </a>
+            className="block w-full h-full relative"
+          >
+            <img
+              src="/logo.png"
+              alt="Creatyx Logo"
+              /* - absolute + top-1/2 + -translate-y-1/2: Công thức vàng để căn giữa tuyệt đối theo chiều dọc.
+                 - h-[250%] -> h-[350%]: Tăng độ bự tùy ý mà không lo lệch layout.
+                 - left-0: Giữ sát lề trái.
+              */
+              className="absolute top-1/2 left-0 -translate-y-[51%] h-[180%] md:h-[380%] w-auto max-w-none object-contain transition-transform duration-500 group-hover:scale-105"
+              style={{ 
+                filter: 'drop-shadow(0 12px 20px rgba(0,0,0,0.15))'
+              }}
+            />
+          </a>
+        </div>
 
-        {/* Desktop Nav - Absolute Center for perfect alignment */}
-        <div className="hidden lg:flex items-center gap-8 xl:gap-12 bg-white/5 px-8 xl:px-12 py-3.5 rounded-full border border-white/5 backdrop-blur-sm absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 shadow-lg shadow-black/20">
+        {/* Desktop Nav - Pill căn giữa */}
+        <div className="hidden lg:flex items-center gap-10 bg-black/10 px-10 py-3 rounded-full border border-white/10 backdrop-blur-md absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 z-30">
           {NAV_LINKS.map((link) => (
             <a 
               key={link.name} 
               href={link.href}
               onClick={(e) => handleSmoothScroll(e, link.href)}
-              className="text-base xl:text-lg font-medium text-gray-300 hover:text-white transition-colors whitespace-nowrap"
+              className="text-sm font-bold text-gray-200 hover:text-white transition-colors uppercase tracking-wider"
             >
               {link.name}
             </a>
@@ -78,39 +78,34 @@ const Navbar: React.FC = () => {
         </div>
 
         {/* CTA */}
-        <div className="hidden md:block relative z-20">
-            <Button variant="beam" className="text-base md:text-lg px-8 py-3">
-              {HERO_CONTENT.cta}
-            </Button>
+        <div className="hidden md:block z-20">
+          <Button variant="beam" className="px-8 py-2.5 text-sm font-bold uppercase">
+            {HERO_CONTENT.cta}
+          </Button>
         </div>
 
         {/* Mobile Toggle */}
         <button 
-          className="lg:hidden text-white relative z-20"
+          className="lg:hidden text-white z-20 p-2"
           onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
         >
-          {isMobileMenuOpen ? <X className="w-8 h-8 md:w-10 md:h-10" /> : <Menu className="w-8 h-8 md:w-10 md:h-10" />}
+          {isMobileMenuOpen ? <X size={35} /> : <Menu size={35} />}
         </button>
       </div>
 
       {/* Mobile Menu */}
       {isMobileMenuOpen && (
-        <div className="absolute top-full left-0 right-0 bg-black border-b border-white/10 p-6 flex flex-col gap-4 lg:hidden animate-in slide-in-from-top-5 h-screen">
+        <div className="fixed inset-0 bg-black/98 flex flex-col items-center justify-center gap-10 lg:hidden z-[60]">
           {NAV_LINKS.map((link) => (
             <a 
               key={link.name} 
               href={link.href}
-              className="text-3xl md:text-4xl font-medium text-gray-300 hover:text-brand-orange py-4"
+              className="text-4xl font-black text-white uppercase"
               onClick={(e) => handleSmoothScroll(e, link.href)}
             >
               {link.name}
             </a>
           ))}
-          <div className="mt-8">
-            <Button variant="secondary" className="w-full justify-center py-6 text-xl">
-                {HERO_CONTENT.cta}
-            </Button>
-          </div>
         </div>
       )}
     </nav>

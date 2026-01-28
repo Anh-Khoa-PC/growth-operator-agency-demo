@@ -12,14 +12,25 @@ const Hero: React.FC = () => {
   const contentY = useTransform(scrollY, [0, 1000], [0, 100]);
   const opacity = useTransform(scrollY, [0, 500], [1, 0]);
 
-  // Handle Badge Logic
+  // Handle Badge Logic - Updated for simple text
   const badgeFullText = HERO_CONTENT.badge;
-  const splitText = "Spoiler: It never does.";
-  const parts = badgeFullText.split(splitText);
-  const hasSpoiler = parts.length > 1;
+
+  const renderBadgeContent = (text: string) => {
+    // Check if it matches the specific string to apply highlighting
+    if (text === "YOU PAY NOTHING, ONLY RESULT COMMISSION") {
+      return (
+        <>
+          YOU PAY <span className="text-brand-orange">NOTHING</span>, ONLY RESULT <span className="text-brand-orange">COMMISSION</span>
+        </>
+      );
+    }
+    // Fallback for other texts
+    return text;
+  };
 
   return (
-    <section className="relative min-h-screen flex items-center justify-center px-4 pt-32 pb-20 md:pt-48 overflow-hidden bg-black selection:bg-brand-orange/30">
+    // Reduced top padding and increased bottom padding to visually lift the content center
+    <section className="relative min-h-screen flex items-center justify-center px-4 pt-20 pb-32 md:pt-24 md:pb-40 overflow-hidden bg-black selection:bg-brand-orange/30">
       {/* Dynamic Background with Parallax */}
       <motion.div 
         style={{ y: bgY, opacity }}
@@ -38,54 +49,46 @@ const Hero: React.FC = () => {
           style={{ y: contentY }} 
           className="max-w-[1000px] mx-auto text-center flex flex-col items-center justify-center"
         >
-            {/* Badge - Premium Styling with Split Content */}
+            {/* Badge - Premium Styling */}
             <motion.div
               initial={{ opacity: 0, y: -20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6 }}
-              className="inline-flex items-center gap-3 px-4 py-2 rounded-full bg-[#0a0a0a] border border-white/10 backdrop-blur-xl mb-8 hover:border-brand-orange/20 transition-all shadow-[0_0_30px_rgba(0,0,0,0.6)] group cursor-default"
+              className="inline-flex items-center gap-3 px-4 py-2 rounded-full bg-[#0a0a0a] border border-white/10 backdrop-blur-xl mb-6 hover:border-brand-orange/20 transition-all shadow-[0_0_30px_rgba(0,0,0,0.6)] group cursor-default"
             >
               <div className="flex items-center gap-2">
                 <span className="relative flex h-2 w-2">
                   <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-brand-orange opacity-75"></span>
                   <span className="relative inline-flex rounded-full h-1.5 w-1.5 bg-brand-orange shadow-[0_0_10px_#ff6b00]"></span>
                 </span>
-                <span className="text-gray-200 text-[10px] md:text-xs font-medium tracking-wide uppercase group-hover:text-white transition-colors">
-                  {hasSpoiler ? (
-                    <>
-                      {parts[0]}
-                      <span className="text-brand-orange font-extrabold italic">{splitText}</span>
-                      {parts[1]}
-                    </>
-                  ) : (
-                    badgeFullText
-                  )}
+                <span className="text-gray-200 text-[10px] md:text-xs font-bold tracking-widest uppercase group-hover:text-white transition-colors">
+                  {renderBadgeContent(badgeFullText)}
                 </span>
               </div>
             </motion.div>
 
-            {/* Headline - Reduced Size & Clean */}
-            <div className="flex flex-col items-center justify-center mb-8 mx-auto w-full relative z-20">
+            {/* Headline - Split into 3 lines */}
+            <div className="flex flex-col items-center justify-center mb-6 mx-auto w-full relative z-20">
               <motion.h1 
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8 }}
-                className="text-3xl md:text-5xl lg:text-6xl font-bold tracking-tight text-white leading-[1.1] text-center max-w-4xl mx-auto [text-wrap:balance]"
+                className="text-4xl md:text-6xl lg:text-7xl font-bold tracking-tight text-white leading-[1.1] text-center max-w-6xl mx-auto [text-wrap:balance]"
               >
-                <span className="text-white inline-block mb-1 md:mb-2">{HERO_CONTENT.headlinePart1}</span>
-                <br className="hidden md:block" />
-                <span className="bg-gradient-to-r from-[#FF5C00] via-[#FF8F40] to-white bg-clip-text text-transparent box-decoration-clone">
-                   {HERO_CONTENT.headlinePart2}
+                <span className="block mb-1 text-white">{HERO_CONTENT.headlinePart1}</span>
+                <span className="block mb-2 text-white">{HERO_CONTENT.headlinePart2}</span>
+                <span className="bg-gradient-to-r from-[#FF5C00] via-[#FF8F40] to-white bg-clip-text text-transparent box-decoration-clone inline-block">
+                   {HERO_CONTENT.headlinePart3}
                 </span>
               </motion.h1>
             </div>
 
-            {/* Subtext Container - Reduced Size */}
+            {/* Subtext Container - Reduced Size & Spacing */}
             <motion.div 
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.4 }}
-              className="relative mb-10 max-w-2xl mx-auto"
+              className="relative mb-8 max-w-2xl mx-auto"
             >
                <div className="inline-block bg-[#050505] border border-white/10 rounded-full px-5 py-2.5 shadow-[0_10px_40px_rgba(0,0,0,0.5)] backdrop-blur-sm">
                    <p className="text-gray-300 text-sm md:text-base font-medium leading-tight">

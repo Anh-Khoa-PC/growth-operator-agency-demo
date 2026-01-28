@@ -11,9 +11,10 @@ export const NAV_LINKS: NavLink[] = [
 ];
 
 export const HERO_CONTENT = {
-  badge: "You pay nothing, only result commission",
-  headlinePart1: "We create your offer from A to Z, market it,",
-  headlinePart2: "and scale it to over €30,000/month in under 60 days.",
+  badge: "YOU PAY NOTHING, ONLY RESULT COMMISSION",
+  headlinePart1: "We create your offer",
+  headlinePart2: "from A to Z, market it,",
+  headlinePart3: "and scale it to over €30,000/month in under 90 days.",
   subheadline: "We turn audiences into revenue.",
   cta: "Apply Now"
 };
