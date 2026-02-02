@@ -6,6 +6,9 @@ import TextReveal from './ui/TextReveal';
 import Button from './ui/Button';
 
 const Benefits: React.FC = () => {
+  // Link Typeform đồng bộ
+  const APPLY_LINK = "https://form.typeform.com/to/RgaxvJsR";
+
   return (
     <SectionWrapper id="why-us" className="bg-black py-12 md:py-16">
       <div className="mb-12 text-center max-w-3xl mx-auto flex flex-col items-center">
@@ -55,7 +58,7 @@ const Benefits: React.FC = () => {
         ))}
       </div>
 
-      {/* Added CTA Button */}
+      {/* Added CTA Button with Typeform Link */}
       <motion.div 
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
@@ -63,9 +66,15 @@ const Benefits: React.FC = () => {
         transition={{ delay: 0.4, duration: 0.8 }}
         className="flex justify-center relative z-10"
       >
-        <Button variant="beam" size="lg" className="shadow-[0_20px_50px_rgba(255,92,0,0.15)]">
-          {HERO_CONTENT.cta}
-        </Button>
+        <a 
+          href={APPLY_LINK}
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <Button variant="beam" size="lg" className="shadow-[0_20px_50px_rgba(255,92,0,0.15)] px-12 py-4">
+            {HERO_CONTENT.cta}
+          </Button>
+        </a>
       </motion.div>
     </SectionWrapper>
   );

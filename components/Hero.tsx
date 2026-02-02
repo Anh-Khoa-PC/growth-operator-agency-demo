@@ -3,13 +3,16 @@ import { motion } from 'framer-motion';
 import Button from './ui/Button';
 
 const Hero: React.FC = () => {
+  // Link Typeform đồng bộ cho toàn bộ hệ thống
+  const APPLY_LINK = "https://form.typeform.com/to/RgaxvJsR";
+
   return (
     <section className="relative min-h-screen flex items-start justify-center px-4 pt-40 pb-20 overflow-hidden bg-black selection:bg-brand-orange/30">
       
       {/* --- BACKGROUND LAYER --- */}
       <div className="absolute inset-0 z-0 pointer-events-none">
         
-        {/* 1. Lớp lưới chính - Tăng độ rõ lên 0.05 */}
+        {/* 1. Lớp lưới chính */}
         <div 
           className="absolute inset-0 bg-[linear-gradient(to_right,rgba(255,255,255,0.05)_1px,transparent_1px),linear-gradient(to_bottom,rgba(255,255,255,0.05)_1px,transparent_1px)] bg-[size:50px_50px]"
           style={{ 
@@ -18,7 +21,7 @@ const Hero: React.FC = () => {
           }}
         />
 
-        {/* 2. Lớp texture điểm - Tăng nhẹ độ hiển thị */}
+        {/* 2. Lớp texture điểm */}
         <div 
           className="absolute inset-0 bg-[radial-gradient(rgba(255,255,255,0.08)_1px,transparent_1px)] bg-[size:25px_25px]"
           style={{ 
@@ -47,7 +50,7 @@ const Hero: React.FC = () => {
             </span>
           </div>
 
-          {/* Headline - Đã thu nhỏ lại một chút (72px) để tinh tế hơn */}
+          {/* Headline */}
           <h1 className="text-4xl md:text-6xl lg:text-[68px] font-black tracking-tight text-white leading-[1.25] mb-10 [text-wrap:balance]">
             We create your offer from A to Z, market it, 
             <span className="bg-gradient-to-r from-brand-orange to-orange-300 bg-clip-text text-transparent"> and scale it to over €30,000/month </span>
@@ -59,12 +62,19 @@ const Hero: React.FC = () => {
             We turn audiences into revenue.
           </p>
 
-          {/* CTA Button */}
+          {/* CTA Button - Bọc link Typeform */}
           <div className="relative group">
             <div className="absolute -inset-1 bg-brand-orange/20 blur-xl rounded-full group-hover:bg-brand-orange/35 transition duration-500"></div>
-            <Button variant="beam" className="relative text-base px-14 py-4.5 font-black uppercase tracking-[0.1em] shadow-xl transition-all hover:scale-[1.02] active:scale-95">
-              Apply Now ↗
-            </Button>
+            <a 
+              href={APPLY_LINK}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="relative inline-block"
+            >
+              <Button variant="beam" className="text-base px-14 py-4.5 font-black uppercase tracking-[0.1em] shadow-xl transition-all hover:scale-[1.02] active:scale-95">
+                Apply Now ↗
+              </Button>
+            </a>
           </div>
         </motion.div>
       </div>

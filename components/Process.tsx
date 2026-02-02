@@ -4,6 +4,9 @@ import { PROCESS_STEPS, HERO_CONTENT } from '../constants';
 import Button from './ui/Button';
 
 const Process: React.FC = () => {
+  // Link Typeform đồng bộ
+  const APPLY_LINK = "https://form.typeform.com/to/RgaxvJsR";
+
   return (
     <SectionWrapper id="process" className="bg-brand-black">
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
@@ -14,10 +17,19 @@ const Process: React.FC = () => {
           <p className="text-gray-400 text-lg mb-8">
             Our proprietary 3-step framework is designed to remove you from the day-to-day operations while skyrocketing your revenue.
           </p>
-          <div className="mt-10 flex justify-center lg:justify-center">
-            <Button variant="beam" size="lg" className="shadow-[0_20px_50px_rgba(255,92,0,0.1)]">
-                {HERO_CONTENT.cta}
-            </Button>
+          
+          {/* Căn giữa nút bấm trên mọi thiết bị */}
+          <div className="mt-10 flex justify-center w-full">
+            <a 
+              href={APPLY_LINK}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-block"
+            >
+              <Button variant="beam" size="lg" className="shadow-[0_20px_50px_rgba(255,92,0,0.1)] px-10 py-4 font-bold">
+                  {HERO_CONTENT.cta}
+              </Button>
+            </a>
           </div>
         </div>
 

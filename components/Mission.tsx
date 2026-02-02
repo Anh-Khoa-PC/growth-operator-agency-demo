@@ -4,11 +4,14 @@ import { ArrowUpRight } from 'lucide-react';
 import { motion } from 'framer-motion';
 
 const Mission: React.FC = () => {
+  // Link Typeform của bạn
+  const APPLY_LINK = "https://form.typeform.com/to/RgaxvJsR";
+
   return (
     <SectionWrapper id="mission" className="bg-black py-20 md:py-24">
       <div className="max-w-[1100px] mx-auto px-6 text-center">
         
-        {/* Badge - Tinh chỉnh lại cho thanh thoát */}
+        {/* Badge */}
         <motion.div 
           initial={{ opacity: 0, y: -15 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -19,14 +22,14 @@ const Mission: React.FC = () => {
           <span className="text-gray-500 text-[10px] md:text-xs uppercase tracking-[0.3em] font-bold">Our Mission</span>
         </motion.div>
 
-        {/* Headline - Đã hạ về 6xl (Mức cân đối nhất) */}
+        {/* Headline */}
         <h2 className="text-4xl md:text-5xl lg:text-6xl font-black text-white mb-8 leading-[1.15] tracking-tight">
           We Help <span className="text-brand-orange">Creators & Coaches</span> <br className="hidden md:block" />
           Scale with our <span className="text-brand-orange">done-for-you</span> <br className="hidden md:block" />
           systems and proven <span className="text-brand-orange">automations</span>
         </h2>
 
-        {/* Subheadline - Đưa về mức dễ đọc, không quá choáng ngợp */}
+        {/* Subheadline */}
         <motion.div 
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -40,9 +43,11 @@ const Mission: React.FC = () => {
           </p>
         </motion.div>
 
-        {/* CTA - Giữ nguyên sự mạnh mẽ nhưng size vừa phải */}
+        {/* CTA - Cập nhật link Typeform tại đây */}
         <motion.a 
-          href="#contact" 
+          href={APPLY_LINK}
+          target="_blank"
+          rel="noopener noreferrer"
           initial={{ opacity: 0, y: 15 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}

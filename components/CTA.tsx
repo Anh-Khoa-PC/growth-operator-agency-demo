@@ -3,6 +3,9 @@ import { FOOTER_CTA } from '../constants';
 import Button from './ui/Button';
 
 const CTA: React.FC = () => {
+  // Link Typeform đồng bộ với các phần khác
+  const APPLY_LINK = "https://form.typeform.com/to/RgaxvJsR";
+
   return (
     // Giảm min-h từ 80vh xuống 60vh để cân đối hơn
     <section className="min-h-[60vh] relative overflow-hidden bg-black flex items-center justify-center py-20">
@@ -45,11 +48,18 @@ const CTA: React.FC = () => {
             {FOOTER_CTA.subheadline}
           </p>
           
-          {/* Button - Thu gọn padding và text size */}
+          {/* Button - Đã thêm link Typeform */}
           <div className="flex justify-center items-center w-full">
-            <Button variant="beam" className="text-xl px-12 py-4 font-bold shadow-[0_0_30px_rgba(255,87,34,0.2)] hover:shadow-brand-orange/40 transition-all duration-300">
-              {FOOTER_CTA.cta}
-            </Button>
+            <a 
+              href={APPLY_LINK} 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="inline-block"
+            >
+              <Button variant="beam" className="text-xl px-12 py-4 font-bold shadow-[0_0_30px_rgba(255,87,34,0.2)] hover:shadow-brand-orange/40 transition-all duration-300">
+                {FOOTER_CTA.cta}
+              </Button>
+            </a>
           </div>
         </div>
       </div>
